@@ -50,7 +50,7 @@
                 }
 
                 $content_type = \Idno\Common\ContentType::getRegisteredForIndieWebPostType($share_type);
-                
+
                 $hide_nav = false;
                 if ($this->getInput('via') == 'ff_social') {
                     $hide_nav = true;
@@ -63,6 +63,7 @@
                         } else {
                             $page->setInput('short-url', $short_url);
                             $page->setInput('url', $url);
+                            $page->setInput('pageTitle', $title);
                             if (substr_count($url, 'twitter.com')) {
                                 preg_match("|https?://(www\.)?twitter\.com/(#!/)?@?([^/]*)|", $url, $matches);
                                 if (!empty($matches[3])) {

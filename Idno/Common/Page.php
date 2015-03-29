@@ -54,6 +54,7 @@
             function init()
             {
                 header('X-Powered-By: https://withknown.com');
+                header('X-Clacks-Overhead: GNU Terry Pratchett');
                 if ($template = $this->getInput('_t')) {
                     if (\Idno\Core\site()->template()->templateTypeExists($template)) {
                         \Idno\Core\site()->template()->setTemplateType($template);
@@ -76,9 +77,7 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
 
                 \Idno\Core\site()->session()->APIlogin();
                 $this->parseJSONPayload();
@@ -105,9 +104,7 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
 
                 \Idno\Core\site()->session()->APIlogin();
                 $this->parseJSONPayload();
@@ -134,9 +131,7 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
 
                 \Idno\Core\site()->session()->APIlogin();
 
@@ -203,9 +198,7 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
 
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
@@ -266,9 +259,7 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
 
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
@@ -328,9 +319,8 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
+
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
                 $this->xhr = true;
@@ -345,9 +335,8 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
+
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
                 $this->xhr     = true;
@@ -363,9 +352,8 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
+
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
                 $this->xhr     = true;
@@ -381,9 +369,8 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
+
                 $arguments = func_get_args();
                 if (!empty($arguments)) $this->arguments = $arguments;
                 $this->xhr     = true;
@@ -398,9 +385,8 @@
             {
                 \Idno\Core\site()->session()->publicGatekeeper();
 
-                if ($this->isAcceptedContentType('application/json')) {
-                    \Idno\Core\site()->template()->setTemplateType('json');
-                }
+                \Idno\Core\site()->template()->autodetectTemplateType();
+
                 $this->forward = false;
                 //$this->webmentionContent();
             }
